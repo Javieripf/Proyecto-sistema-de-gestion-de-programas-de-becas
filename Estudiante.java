@@ -1,23 +1,25 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class Estudiante {
-    private String nombre;
-    private String id;
-    private ArrayList<SolicitudBeca> solicitudes;
+public class Estudiante extends Persona {
+    private List<SolicitudBeca> solicitudes;
 
     public Estudiante(String nombre, String id) {
-        this.nombre = nombre;
-        this.id = id;
+        super(nombre, id);
         this.solicitudes = new ArrayList<>();
     }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-    public ArrayList<SolicitudBeca> getSolicitudes() { return solicitudes; }
+    public List<SolicitudBeca> getSolicitudes() { return solicitudes; }
+    public void setSolicitudes(List<SolicitudBeca> solicitudes) { this.solicitudes = solicitudes; }
 
+    // Sobreescritura: descripcion específica del estudiante
+    @Override
+    public String descripcion() {
+        return "Estudiante: " + getNombre() + ", ID: " + getId();
+    }
+
+    @Override
     public String toString() {
-        return "Estudiante: " + nombre + ", ID: " + id;
+        return descripcion();
     }
 }

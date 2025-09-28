@@ -9,11 +9,12 @@ public class Beca {
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
+
     public String getCriterio() { return criterio; }
     public void setCriterio(String criterio) { this.criterio = criterio; }
 
+    @Override
     public String toString() {
         return "Beca: " + tipo + ", Criterio: " + criterio;
     }
 }
-
