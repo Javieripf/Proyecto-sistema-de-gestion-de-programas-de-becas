@@ -21,6 +21,9 @@ public class SistemaDeGestion {
         agregarBeca("Beca Voluntariado", "Horas certificadas de servicio comunitario");
         agregarBeca("Beca Excelencia", "Rendimiento academico sobresaliente en toda la carrera");
 
+        // ============ EJEMPLOS DE ESTUDIANTES ============
+        inicializarEstudiantesEjemplo();
+
         // carga persistente al iniciar
         try {
             cargarDatos();
@@ -28,6 +31,43 @@ public class SistemaDeGestion {
             System.out.println("No se pudo cargar data inicial: " + e.getMessage());
         }
     }
+
+    private void inicializarEstudiantesEjemplo() {
+        // Estudiante 1: Juan Pérez
+        agregarEstudiante("Juan Perez", "20230001");
+
+        // Estudiante 2: María López
+        agregarEstudiante("Maria Lopez", "20230002");
+
+        // Estudiante 3: Carlos García
+        agregarEstudiante("Carlos Garcia", "20230003");
+
+        // Crear algunas solicitudes de ejemplo para demostrar funcionalidad
+        crearSolicitudesEjemplo();
+
+    }
+
+    private void crearSolicitudesEjemplo() {
+        // Juan Pérez - Estudiante aplicando a becas académicas
+        crearSolicitud("20230001", "Beca Academica");
+        crearSolicitud("20230001", "Beca Excelencia");
+
+        // María López - Estudiante con perfil diverso
+        crearSolicitud("20230002", "Beca Cultural");
+        crearSolicitud("20230002", "Beca Liderazgo");
+        crearSolicitud("20230002", "Beca Socioeconomica");
+
+        // Carlos García - Estudiante deportista
+        crearSolicitud("20230003", "Beca Deportiva");
+        crearSolicitud("20230003", "Beca Voluntariado");
+
+        // Aprobar algunas solicitudes para tener datos variados
+        aprobarRechazarSolicitud("20230001", "Beca Academica", "Aprobada");
+        aprobarRechazarSolicitud("20230002", "Beca Cultural", "Aprobada");
+        aprobarRechazarSolicitud("20230002", "Beca Socioeconomica", "Rechazada");
+        aprobarRechazarSolicitud("20230003", "Beca Deportiva", "Aprobada");
+    }
+
 
     // ------- ESTUDIANTES (Colección 1)
     public void agregarEstudiante(String nombre, String id) {
