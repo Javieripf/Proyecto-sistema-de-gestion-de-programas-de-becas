@@ -112,7 +112,7 @@ El sistema se inicializa con 8 tipos de becas predefinidas:
 
 ## Requisitos
 
-- **Java 8 o superior**
+- **Jdk 11**
 - Sistema operativo compatible con Swing (Windows, macOS, o Linux con entorno de escritorio)
 
 ## Instrucciones de Ejecución
